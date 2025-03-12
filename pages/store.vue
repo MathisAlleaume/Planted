@@ -1,9 +1,10 @@
 <template>
-  <div class="w-full h-full px-[10rem] py-4">
+  <div class="w-full h-full px-4 sm:px-6 md:px-8 lg:px-[10rem] py-4">
     <Navbar />
     <Hero />
     <Filters />
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-10">
       <Product
         v-for="product in products"
         :key="product.id"

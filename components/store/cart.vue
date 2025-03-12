@@ -1,5 +1,7 @@
 <template>
-  <div class="relative" ref="cartContainer">
+  <div
+    class="fixed md:relative bottom-4 right-4 md:bottom-auto md:right-auto z-50"
+    ref="cartContainer">
     <div
       class="flex flex-row gap-2 items-center bg-white shadow-md px-2 py-1 rounded-xl cursor-pointer hover:bg-slate-200 transition-all duration-300"
       @click.stop="openCart">
@@ -10,7 +12,7 @@
     </div>
     <div
       v-if="opened === true"
-      class="absolute top-0 right-0 min-w-[300px] h-fit bg-white rounded-md shadow-md px-4 py-2">
+      class="fixed md:absolute bottom-5 left-5 md:left-auto md:top-0 right-5 w-[calc(100%-40px)] md:w-auto md:min-w-[300px] h-fit bg-white rounded-md shadow-md px-4 py-2">
       <div class="text-sm font-normal font-['Inter'] w-full text-center">
         Mon Panier
       </div>

@@ -1,10 +1,12 @@
 <template>
   <div
-    class="flex flex-col gap-[30px] px-[30rem] py-[3rem] justify-between items-center">
-    <div class="text-[40px] font-normal font-['Soulway_Demo']">
+    class="flex flex-col gap-[20px] md:gap-[30px] px-4 sm:px-8 md:px-16 lg:px-24 xl:px-[30rem] py-6 md:py-[3rem] justify-between items-center">
+    <div
+      class="text-[32px] md:text-[40px] font-normal font-['Soulway_Demo'] text-center">
       Derniers Arrivages
     </div>
-    <div class="flex flex-row gap-2">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full">
       <Product
         v-for="product in products"
         :key="product.id"

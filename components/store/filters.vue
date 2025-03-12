@@ -1,5 +1,6 @@
 <template>
-  <div class="h-[100px] flex justify-center items-center gap-4">
+  <div
+    class="h-full p-4 md:h-[100px] flex flex-col lg:flex-row justify-center items-center gap-4">
     <div
       v-for="item in items"
       :key="item.label"

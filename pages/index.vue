@@ -3,25 +3,25 @@
     <Navbar />
     <Hero />
     <div
-      class="bg-[#e9762b] relative text-center justify-start text-white text-[40px] font-normal font-['Soulway_Demo'] rounded-[10px] p-[10px]">
+      class="bg-[#e9762b] relative text-center justify-start text-white text-[20px] md:text-[40px] font-normal font-['Soulway_Demo'] rounded-[10px] p-[10px]">
       10 mars à Nantes - 12 mars à Angers - 15 mars Paris - 18 mars a Rennes
     </div>
     <div
       id="quickLinks"
-      class="flex flex-col lg:flex-row justify-between gap-4">
+      class="flex flex-col lg:flex-row justify-between gap-4 flex-wrap">
       <a
         href="#whyPlanted"
-        class="relative bg-[#0d4715] rounded-[10px] p-[10px] text-white text-[32px] font-normal font-['Soulway_Demo'] w-full min-h-[300px] flex items-center justify-center">
+        class="relative bg-[#0d4715] rounded-[10px] p-[10px] text-white text-[20px] md:text-[32px] font-normal font-['Soulway_Demo'] w-full min-h-[100px] md:min-h-[300px] flex items-center justify-center">
         Pourquoi Planted
       </a>
       <div
-        class="relative bg-[#51785A] rounded-[10px] p-[10px] text-white text-[32px] font-normal font-['Soulway_Demo'] w-full min-h-[300px] flex items-center justify-center cursor-pointer"
+        class="relative bg-[#51785A] rounded-[10px] p-[10px] text-white text-[20px] md:text-[32px] font-normal font-['Soulway_Demo'] w-full min-h-[100px] md:min-h-[300px] flex items-center justify-center cursor-pointer"
         @click="navigateTo('/store')">
         Le magasin
       </div>
       <a
         href="#boursePlantes"
-        class="relative bg-[#0d4715] rounded-[10px] p-[10px] text-white text-[32px] font-normal font-['Soulway_Demo'] w-full min-h-[300px] flex items-center justify-center">
+        class="relative bg-[#0d4715] rounded-[10px] p-[10px] text-white text-[20px] md:text-[32px] font-normal font-['Soulway_Demo'] w-full min-h-[100px] md:min-h-[300px] flex items-center justify-center">
         Une bourse au plantes engagée
       </a>
     </div>

@@ -1,26 +1,28 @@
 <template>
   <div
-    class="w-full flex flex-col justify-end items-start p-4 bg-cover bg-center rounded-4xl text-white relative gradient-overlay"
+    class="w-full flex flex-col justify-end items-start min-h-[400px] sm:min-h-[400px] p-4 sm:p-4 bg-cover bg-center rounded-4xl text-white relative gradient-overlay"
     :style="`background-image: url(${product.image})`">
-    <div class="absolute top-4 right-4 flex gap-2">
+    <div
+      class="hidden sm:flex absolute top-2 sm:top-4 right-2 sm:right-4 gap-1 sm:gap-2">
       <div
-        class="text-xs bg-white text-black px-4 py-2 rounded-full shadow-lg z-10">
+        class="text-[10px] sm:text-xs bg-white text-black px-2 sm:px-4 py-1 sm:py-2 rounded-full shadow-lg z-10">
         {{ product.price }} €
       </div>
 
       <div
-        class="text-xs bg-white text-black px-4 py-2 rounded-full shadow-lg z-10 cursor-pointer hover:bg-gray-200 transition-all duration-100">
+        class="text-[10px] sm:text-xs bg-white text-black px-2 sm:px-4 py-1 sm:py-2 rounded-full shadow-lg z-10 cursor-pointer hover:bg-gray-200 transition-all duration-100">
         Voir le produit
       </div>
       <div
-        class="text-xs bg-white text-black px-4 py-2 rounded-full shadow-lg z-10 cursor-pointer hover:bg-gray-200 transition-all duration-100">
-        <Icon name="heroicons:shopping-cart" class="w-4 h-4" />
+        class="text-[10px] sm:text-xs bg-white text-black px-2 sm:px-4 py-1 sm:py-2 rounded-full shadow-lg z-10 cursor-pointer hover:bg-gray-200 transition-all duration-100">
+        <Icon name="heroicons:shopping-cart" class="w-3 h-3 sm:w-4 sm:h-4" />
       </div>
     </div>
-    <div class="text-[40px] tracking-wide font-normal font-['Inter'] z-10">
+    <div
+      class="text-[24px] sm:text-[40px] tracking-wide font-normal font-['Inter'] z-10">
       {{ product.name }}
     </div>
-    <div class="text-[20px] font-normal font-['Inter'] z-10">
+    <div class="text-[16px] sm:text-[20px] font-normal font-['Inter'] z-10">
       {{ product.description }}
     </div>
   </div>
