@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "Soulway Demo";
+  src: url("/assets/fonts/Soulway_Demo.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Permanent Marker";
+  src: url("/assets/fonts/Permanent_Marker.ttf") format("truetype");
+}
