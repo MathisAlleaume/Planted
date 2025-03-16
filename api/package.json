@@ -1,7 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "tsc-watch --onSuccess \"node dist/index.js\""
+    "dev": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "build": "tsc"
   },
   "dependencies": {
     "@sequelize/sqlite3": "^7.0.0-alpha.45",
@@ -10,8 +11,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mysql2": "^3.13.0",
     "sequelize": "^6.37.6",
+    "sqlite3": "^5.1.7",
     "ts-node": "^10.9.2",
     "tsc-watch": "^6.2.1",
     "typescript": "^5.8.2"
