@@ -4,6 +4,7 @@
     "dev": "tsc-watch --onSuccess \"node dist/index.js\""
   },
   "dependencies": {
+    "@sequelize/sqlite3": "^7.0.0-alpha.45",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.10",
     "cors": "^2.8.5",

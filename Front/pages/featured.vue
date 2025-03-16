@@ -1,11 +1,12 @@
 <template>
   <div
-    class="w-full flex flex-col justify-end items-start min-h-[400px] sm:min-h-[400px] p-4 sm:p-4 bg-cover bg-center rounded-4xl text-white relative gradient-overlay"
-    :style="`background-image: url(${product.image})`">
+    class="w-full flex flex-col justify-end items-start min-h-[400px] sm:min-h-[400px] p-4 sm:p-4 bg-cover bg-center rounded-4xl text-white relative gradient-overlay bg-gray-200"
+    :style="product ? `background-image: url(${product.image})` : ''">
     <div
       class="hidden sm:flex absolute top-2 sm:top-4 right-2 sm:right-4 gap-1 sm:gap-2">
       <div
-        class="text-[10px] sm:text-xs bg-white text-black px-2 sm:px-4 py-1 sm:py-2 rounded-full shadow-lg z-10">
+        class="text-[10px] sm:text-xs bg-white text-black px-2 sm:px-4 py-1 sm:py-2 rounded-full shadow-lg z-10"
+        v-if="product.price">
         {{ product.price }} €
       </div>
 

@@ -47,7 +47,8 @@
             Total : {{ total }} €
           </div>
           <div
-            class="text-sm font-normal font-['Inter'] bg-slate-100 px-2 py-1 rounded-xl cursor-pointer hover:bg-slate-200 transition-all duration-300">
+            class="text-sm font-normal font-['Inter'] bg-slate-100 px-2 py-1 rounded-xl cursor-pointer hover:bg-slate-200 transition-all duration-300"
+            @click="validateCart">
             Valider le panier
           </div>
         </div>
@@ -62,12 +63,12 @@
   const opened = ref(false);
   const cartContainer = ref(null);
 
-  const {cart} = useCartStore();
+  const cartStore = useCartStore();
+  const cart = computed(() => {
+    return cartStore.cart;
+  });
   const total = computed(() => {
-    return cart.reduce(
-      (acc, item) => acc + item.product.price * item.quantity,
-      0
-    );
+    return cartStore.total;
   });
 
   const handleClickOutside = (event) => {
@@ -76,14 +77,16 @@
       !cartContainer.value.contains(event.target) &&
       opened.value === true
     ) {
-      console.log("close cart");
       opened.value = false;
     }
   };
 
   const openCart = (event) => {
-    console.log("open cart", opened.value);
     opened.value = true;
+  };
+
+  const validateCart = () => {
+    cartStore.validateCart();
   };
 
   onMounted(() => {

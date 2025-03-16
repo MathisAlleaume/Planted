@@ -10,6 +10,7 @@ import {
   updateProduct,
   deleteProduct,
 } from "./Controller/Product.controller.js";
+import {createCart} from "./Controller/Cart.controller.js";
 const app = express();
 const port = 3030;
 
@@ -39,6 +40,10 @@ app.put("/products/:id", (req: Request, res: Response) => {
 
 app.delete("/products/:id", (req: Request, res: Response) => {
   deleteProduct(req, res);
+});
+
+app.post("/carts", (req: Request, res: Response) => {
+  createCart(req, res);
 });
 
 app.listen(port, () => {

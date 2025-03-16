@@ -9,6 +9,14 @@ interface CartItem {
 export const useCartStore = defineStore("cart", () => {
   const cart = ref<CartItem[]>([]);
 
+  const total = computed(() => {
+    let total = 0;
+    cart.value.forEach((item) => {
+      total += item.product.price * item.quantity;
+    });
+    return total;
+  });
+
   const pushToCart = (item: Product) => {
     const existingItem = cart.value.find(
       (cartItem) => cartItem.product.id === item.id
@@ -34,5 +42,17 @@ export const useCartStore = defineStore("cart", () => {
     }
   };
 
-  return {cart, pushToCart, removeFromCart};
+  const validateCart = async () => {
+    await $fetch("http://localhost:3030/carts", {
+      method: "POST",
+      body: {
+        userId: 1,
+        content: cart.value,
+        total: total.value,
+        status: "pending",
+      },
+    });
+  };
+
+  return {cart, pushToCart, removeFromCart, validateCart};
 });

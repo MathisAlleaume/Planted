@@ -27,7 +27,6 @@
 
   const route = useRoute();
   const goTo = (path: string) => {
-    console.log("go to store");
     navigateTo(path);
   };
 </script>

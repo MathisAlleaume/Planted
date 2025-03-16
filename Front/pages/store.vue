@@ -22,7 +22,9 @@
   import Footer from "~/components/shared/footer.vue";
   import {usePlantsStore} from "~/store/plants.store";
 
+  const plantsStore = usePlantsStore();
+
   const products = computed(() => {
-    return usePlantsStore().plants;
+    return plantsStore.plants;
   });
 </script>

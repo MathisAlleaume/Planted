@@ -23,5 +23,8 @@
 <script setup>
   import Product from "../store/product.vue";
   import {usePlantsStore} from "~/store/plants.store";
-  const products = usePlantsStore().plants.slice(0, 3);
+  const plantsStore = usePlantsStore();
+  const products = computed(() => {
+    return plantsStore.plants.slice(0, 3);
+  });
 </script>
