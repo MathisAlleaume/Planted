@@ -54,5 +54,5 @@ export const useCartStore = defineStore("cart", () => {
     });
   };
 
-  return {cart, pushToCart, removeFromCart, validateCart};
+  return {cart, total, pushToCart, removeFromCart, validateCart};
 });

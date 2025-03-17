@@ -1,6 +1,6 @@
 <template>
   <div class="w-full min-h-[600px] h-2/3 flex flex-col lg:flex-row gap-4">
-    <Featured :product="featured" />
+    <Featured />
     <div class="w-full lg:w-2/3 h-full flex flex-col justify-between gap-4">
       <div
         class="w-full bg-[#51785A] text-white rounded-4xl px-4 sm:px-8 lg:px-12 py-4 flex flex-col justify-between gap-4">
@@ -51,15 +51,5 @@
 </template>
 
 <script setup lang="ts">
-  import Featured from "~/pages/featured.vue";
-  import {Product} from "~/classes/product";
-  import {usePlantsStore} from "~/store/plants.store";
-
-  const featured = ref<Product | object>({});
-  onMounted(() => {
-    const rdmNumber = Math.floor(
-      Math.random() * usePlantsStore().plants.length
-    );
-    featured.value = usePlantsStore().plants[rdmNumber];
-  });
+  import Featured from "~/components/store/featured.vue";
 </script>

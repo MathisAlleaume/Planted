@@ -1,18 +1,18 @@
 <template>
   <div
-    class="fixed md:relative bottom-4 right-4 md:bottom-auto md:right-auto z-50"
+    class="fixed md:fixed top-4 right-4 md:top-4 md:right-4 z-50"
     ref="cartContainer">
     <div
       class="flex flex-row gap-2 items-center bg-white shadow-md px-2 py-1 rounded-xl cursor-pointer hover:bg-slate-200 transition-all duration-300"
       @click.stop="openCart">
       <Icon name="heroicons:shopping-cart" class="w-6 h-6" />
-      <div class="text-sm font-normal font-['Inter']">
+      <div class="text-sm font-normal font-['Inter']" v-if="cart.length > 0">
         {{ cart.length }} : {{ total }} €
       </div>
     </div>
     <div
       v-if="opened === true"
-      class="fixed md:absolute bottom-5 left-5 md:left-auto md:top-0 right-5 w-[calc(100%-40px)] md:w-auto md:min-w-[300px] h-fit bg-white rounded-md shadow-md px-4 py-2">
+      class="fixed md:fixed mt-4 md:mt-4 md:right-0 md:mr-4 w-[calc(100%-40px)] md:w-auto md:min-w-[300px] h-fit bg-white rounded-md shadow-md px-4 py-2">
       <div class="text-sm font-normal font-['Inter'] w-full text-center">
         Mon Panier
       </div>
@@ -32,9 +32,10 @@
               {{ item.quantity }}x
             </div>
             <div class="text-sm font-normal font-['Inter']">
-              {{ item.product.name }}
+              {{ item.product.name }} ({{ item.product.price }} €) :
             </div>
-            <div class="text-sm font-normal font-['Inter']">
+            <div
+              class="text-sm font-normal font-['Inter'] bg-slate-100 px-2 py-1 rounded-xl">
               {{ item.product.price * item.quantity }} €
             </div>
           </div>
@@ -43,7 +44,8 @@
         <div
           class="flex flex-row gap-2 items-center justify-between"
           v-if="cart.length > 0">
-          <div class="text-sm font-normal font-['Inter']">
+          <div
+            class="text-sm font-normal font-['Inter'] bg-slate-100 px-2 py-1 rounded-xl">
             Total : {{ total }} €
           </div>
           <div

@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col gap-4 bg-white rounded-lg p-4">
+  <div
+    class="flex flex-col gap-4 bg-white rounded-lg p-4"
+    :id="`product-${props.product.id}`">
     <div
       :style="{backgroundImage: `url(${props.product.image})`}"
       class="w-full min-h-[400px] bg-cover bg-center rounded-md" />
@@ -49,7 +51,7 @@
 
   const props = defineProps({
     product: {
-      type: Object,
+      type: Object as () => Product,
       required: true,
     },
   });
